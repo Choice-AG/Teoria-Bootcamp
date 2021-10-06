@@ -1,0 +1,132 @@
+
+ERRORES QUE SOLEMOS COMETER AL EMPEZAR A PROGRAMAR
+------------------------------------------------------------------------------------------------------------------------------------------
+
+- Nombrar bien las variables para que el código sea leíble por otra persona:
+
+BIEN					MAL
+var CONTADOR = 0;		var FOO = 0;
+var DIA_HOY = 0;		var BAR = 0;
+var COCHES = 0;			var FOOBAR = 0;
+
+Usar variables "i", "j", "k"... esta bien en bucles (for o while).
+Usar "temp" o "tmp" en variables temporales esta bien(la declaro y la utilizo 1 vez).
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+- Comentar las cosas que vamos haciendo en el codigo:
+
+//Comentar de esta forma la finalidad del codigo que estamos escribiendo.
+
+NO hace falta comentarlo absolutamente todo, solo cosas útiles.
+Comentas las cosas para que el yo del futuro sepa el como y porqué hicimos ciertas cosas.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+- Seguir la guía de estilos, no poner todo de seguido que sea posible de leer.
+
+if (foo == 0) {
+	haz esto;
+}
+
+if (bar == 0) {
+	pinta_en_pantalla;
+}
+
+while (bar != 0) {
+	if(a < bar) {
+		acción;
+	}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+- Copias de seguridad o control de versiones (en otro sitio que no sea el disco duro).
+
+Repositorio de codigo como Git-hub o Git-lab son muy utiles.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilizar la forma simple de hacer las cosas.
+
+Por ejemplo:
+
+LARGO													CORTO
+int numeros[] = {10, 20, 30, 40, 50}					int numeros[] = {10, 20, 30, 40, 50}
+for (int i = 0; i < numeros.length; i = i + 1) {		for (int i = 0; i < numeros.length; i++) {
+	System.out.println(numeros[i]);						System.out.println(numeros[i]);
+}														}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Usar depuradores para ver errores.
+
+En vez de imprimir los valores en el codigo, usar un depurador.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+NO crear funciones que son grandes.
+
+Hacerlo legible y con funciones cortas. Crear una funcion y meter el codigo en dicha funcion no arregla el echo de que sea una funcion grande.
+Usar un nombre de funcion o variable a corde con lo que queremos que el codigo nos devuelva/imprima.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Conversion de tipos y perdida de precision.
+
+Por ejemplo: 
+Lo que pasa es que pasamos un decimal (double) a un entero (int) y perdemos valores por el camino.
+
+public static void main(String[] args) {
+    double temperatura = 15.9;
+    int temperaturaInt = (int)temperatura; // Aqui fuerza que la variable temperatura pase a ser int(temperaturaInt).
+    imprimeTemperatura(temperaturaInt);
+}
+
+public static void imprimeTemperatura(int valor) { // AQUI TENEMOS PUESTO INT (cosa que esta mal)
+	System.out.println(valor);
+}
+
+En este caso, ponemos 15.9 y nos imprime 15. Por lo que perdemos 0.9 por el camino.
+
+public static void main(String[] args) {
+    double temperatura = 15.900;
+    imprimeTemperatura(euros);
+}
+
+public static void imprimeTemperatura(double valor) { //CAMBIAR INT POR VALOR PARA QUE NOS SALGA CON DECIMALES
+    System.out.println(valor);
+}
+
+La solucion era poner en la segunda funcion el valor de la temperatura en "valor".
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Off by one (en array)
+
+Nos solemos confundir por 1 posicion a la hora de declarar el valor del array que queremos que nos muestre.
+Al empezar a contar desde 0 en los arrays se pone -1 del array.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Overflow
+
+public static void main(String[] args) {
+    byte numero = 127;
+    System.out.println(numero);
+
+    numero += 5;
+    System.out.println(numero);
+}
+
+En la consola sale:
+127
+-124
+
+Por eso a la hora de declarar a que tipo de dato es, entonces declararle a que tipo de dato pertenece (int, var, byte...)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------

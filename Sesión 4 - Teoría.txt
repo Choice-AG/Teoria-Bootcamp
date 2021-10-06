@@ -1,0 +1,85 @@
+
+ESTRUCTURA DE LA PROGRAMACION Y SINTAXIS
+------------------------------------------------------------------------------------------------------------------------------------------
+
+LÓGICAS
+	"Y" &&
+	"O" ||
+
+
+COMPARATIVAS
+	"MAYOR QUE" >
+	"MENOR QUE" <
+	"MAYOR O IGUAL QUE" >=
+	"MENOR O IGUAL QUE" <=
+	"IGUAL A" ==
+	"DISTINTO A" !=
+
+VAR estacion = "INVIERNO"
+
+SI (estacion IGUAL A "VERANO") ENTONCES | "if"
+	AQUI LAS ACCIONES A TOMAR
+	BEBER_AGUA()
+	BAÑARSE_EN_LA_PISCINA()
+	TOMARSE_UN_MOJITO()
+	IRSE_AL_BAR()
+
+EN CASO CONTRARIO SI (estacion = "PRIMAVERA") ENTONCES | "else if"
+	SALIR_DE_PASEO()
+	IR_A_VER_A_LOS_AMIGOS()
+	
+EN CASO CONTRARIO ENTONCES | "else"
+	PONERSE_EL_ABRIGO()
+	BEBER_CHOCOLATE_CALIENTE()
+	VER_LA_TELE()
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+BUCLES (REPETIR HASTA QUE LA CONDICION SE CUMPLA)
+
++-+-+-+-+-+-+
+|1|2|3|4|5|6|
++-+-+-+-+-+-+
+
+VAR CONTADOR = 10
+
+"while"
+MIENTRAS (CONTADOR > 0)
+	- 1 AL CONTADOR
+
+"do while" (SE EJECUTA COMO POCO 1 VEZ, SE USA EN CASOS ESPECIALES)
+HAZ
+	- 1 AL CONTADOR
+	MIENTRAS (CONTADOR SEA > 0)
+
+"for" (INICIALIZACION; COMPARACION; ACCION)
+FOR (; CONTADOR > 0; CONTADOR = CONTADOR - 1)
+	IMPRIME EL VALOR DE LA VARIABLE CONTADOR
+	
+VAR VALORES = |10|20|30|40|50|
+			   0  1  2  3  4
+FOR (POSICION_EN_VALOR = 0; POSICION_EN_ARRAY < LONGITUD_DEL_ARRAY (0 < 5, 1 < 5, 2 < 5, 3 < 5, 4 < 5, 5 < 5 (ESTA NO!)); POSICION ++)
+	IMPRIME EL VALOR DE LA POSICION ACTUAL EN EL ARRAY
+
+PYTHON -> for x in valores
+PHP -> foreach ($valor in $valores) ... 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+SWITCH (PARA FINALIZAR LA EJECUCION DE UN CASO HAY QUE PONER BREAK (JAVA) o FALLTHROUGH(GO))
+
+VAR estacion = "VERANO";
+switch (estacion) {
+	case "VERANO"
+		System.out.println("ES INVIERNO");
+		break;
+		
+	case "INVIERNO"
+		System.out.println("ES INVIERNO");
+		break;
+		
+	default:
+		System.out.println(estacion);
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
