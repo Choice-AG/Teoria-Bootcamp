@@ -1,10 +1,6 @@
-DEPURACION
+DEPURACION ( debbuger)
 
 Sirve para "buscar" errores mediante un tipo de programa.
 Funcionan mediante los "puntos de ruptura" que es la parte en la que nosotros le decimos al programa que debe de PARAR.
-
-------------------------------------------------------------------------------------------------------------------------------------------
-
-
 
 ------------------------------------------------------------------------------------------------------------------------------------------

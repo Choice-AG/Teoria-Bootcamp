@@ -1,0 +1,106 @@
+PRIVACIDAD, ABSTRACCIÓN Y ENCAPSULACIÓN
+
+class miClase
+	"puclic" propiedad1; // PARA UNA CLASE PUBLICA
+	"private" propiedad2;	// PARA UNA CLASE PRIVADA
+	
+	funcion1();
+	funcion2();
+	
+PROGRAMA PRINCIPAL
+
+	var unaClase instancia de miClase
+
+	unaClase.propiedad1 = valor
+	imprime unaClase.propiedad2
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+ENCAPSULACIÓN
+
+Consiste en jugar con tipos publicos y privados para poder manipularlos dentro de la clase y utilizarlos fuera de la clase.
+
+class Miclase
+	private propiedad1();
+	private propiedad2();
+	
+	FUNCION SETTERPROPIEDAD1(TEXTO valor)
+		ESTA_CLASE.PROPIEDAD1 = valor
+		
+	FUNCION GETTERPROPIEDAD1() TEXTO
+		DEVUELVE EL VALOR DE ESTA_CLASE.PROPIEDAD1
+
+CASO PRÁCTICO
+
+public class Main {
+
+    public static void main(String[] args) {
+        Vehiculo coche = new Vehiculo();
+        coche.setTipo("Coupe");
+
+        Vehiculo moto = new Vehiculo();
+        moto.setTipo("Scooter");
+
+        System.out.println(coche.getTipo());
+        System.out.println(moto.getTipo());
+    }
+}
+
+class Vehiculo {
+    private String tipo;
+
+    public void setTipo(String tipo) { // los setters no devuelven nada y requieren como parametro uno con el mismo tipo de dato que la propiedad
+        this.tipo = tipo; // los getters devuelven el mismo tipo de dato que su propiedad pero no necesitan ningun parametro
+    }
+
+    public String getTipo() {
+        return this.tipo;
+    }
+}
+
+En los boolean en vez de ser getTipo seria isTipo (lo demas es exactamente igual). ç
+EJEMPLO
+
+    private boolean rapido;
+
+    public void setRapido(boolean rapido) {
+        this.rapido = rapido;
+    }
+
+    public boolean isRapido() {
+        return this.rapido;
+    }
+
+	coche.setRapido(true);
+	moto.setRapido(false);
+	System.out.println(coche.isRapido());
+	System.out.println(moto.isRapido());
+	
+------------------------------------------------------------------------------------------------------------------------------------------
+
+ABSTRACCIÓN
+
+Quiere decir que el lenguaje que estes usando puede implementar el codigo de algunas funciones y puede decirnos que esta funcion que es 
+abstracta la tenga que implementar una clase hija.Implementan la funcionalidad de forma parcial, siendo el programador el que implemente
+el resto de funciones (una si, unano).
+
+CLASE ABSTRACTA VEHICULO
+	PRIVADA TIPO;
+	PRIVATA SONIDO;
+	
+	FUNCION SETTERTIPO(TEXTO tipo);
+	
+	FUNCION ABSTRACTA GETTERSONIDO() TEXTO; // DIFERENTE SI ES UN COCHE O UNA MOTO
+
+Como puede que cada elemento sea diferente dentro de una clase, se hace abstracta para que el programador pueda implementar lo que necesite.
+
+EJEMPLO
+
+abstract class Vehiculo {
+	private String sonido;
+
+    abstract public void setSonido(String sonido); //No llevan cuerpo al ser abstractas
+    abstract public String getSonido();
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------

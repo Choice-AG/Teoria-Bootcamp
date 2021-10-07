@@ -1,0 +1,68 @@
+PROGRAMACIÓN ORIENTADA A OBJETOS
+
+¿Qué es un objeto?
+	Un objeto pretendemos que sea una entidad que represente a un objeto del mundo real.
+
+Para crear un objeto es:
+	Clase variable = new Clase();
+	
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Propiedades de clase
+	Los objetos tienen propiedades (Por ejemplo: Un cuadro tiene materiales, tamaño...)
+	
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Método constructor (son funciones dentro de una clase)
+	Tambien tienen métodos (Por ejemplo: Un coche tiene el método "abrir puerta", "cerrar puerta"...)
+	
+Para crear un constructor de clase:
+	public Clase() {
+	}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Sobrecarga e inicialización de propiedades
+
+La sobrecarga ocurre cuando a los parámetros les ponemos unos nombres en vez de numeros.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+PRACTICA
+
+public class Main {
+
+    public static void main(String[] args) {
+        Coche coche = new Coche();
+        System.out.println(coche.numeroDePuertas0);
+        System.out.println(coche.velocidadMaxima);
+        System.out.println(coche.velocidadActual);
+
+        Coche coche2 = new Coche(2,90); // Sobrecarga del constructor
+        System.out.println(coche2.numeroDePuertas0);
+        System.out.println(coche2.velocidadMaxima);
+        System.out.println(coche2.velocidadActual);
+    }
+}
+
+//Creamos una clase llamada "Coche" con unas propiedades
+class Coche { 
+    int numeroDePuertas;
+    int velocidadMaxima;
+    float velocidadActual;
+
+    public Coche() {
+        numeroDePuertas = 5;
+        velocidadMaxima = 120;
+        System.out.println("Estoy en el constructor SIN PARAMETROS");
+    }
+
+    //Constructor con parámetros
+    public Coche(int numeroDePuertas, int velocidadMaxima) {
+        this.numeroDePuertas = numeroDePuertas; //this. se usa para hacer referencia a
+        this.velocidadMaxima = velocidadMaxima; //la propiedad de la clase
+        System.out.println("Estoy en el constructor CON PARAMETROS");
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
