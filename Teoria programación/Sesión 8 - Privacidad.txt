@@ -1,3 +1,4 @@
+
 PRIVACIDAD, ABSTRACCIÓN Y ENCAPSULACIÓN
 
 class miClase
