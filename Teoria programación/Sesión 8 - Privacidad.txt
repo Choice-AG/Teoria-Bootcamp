@@ -70,7 +70,7 @@ EJEMPLO
     public boolean isRapido() {
         return this.rapido;
     }
-
+s
 	coche.setRapido(true);
 	moto.setRapido(false);
 	System.out.println(coche.isRapido());
@@ -86,7 +86,7 @@ el resto de funciones (una si, unano).
 
 CLASE ABSTRACTA VEHICULO
 	PRIVADA TIPO;
-	PRIVATA SONIDO;
+	PRIVADA SONIDO;
 	
 	FUNCION SETTERTIPO(TEXTO tipo);
 	

@@ -1,0 +1,191 @@
+HERENCIA, POLIMORFISMO E INTERFACES
+
+Herencia
+Consiste en que una clase hereda métodos y propiedades de otra clase. 
+A la case que hereda la llamamos clase hija y a la clase que cede sus funciones la llamamos como quedamos
+
+CLASE  VEHICULO
+	PRIVADA VELOCIDADMAXIMA;
+	PRIVADA TIPOGASOLINA;
+	
+	FUNCTION diHola()
+		IMPRIME "hola"
+
+CLASE COCHE HEREDA DE VEHICULO;
+	(heredada) VELOCIDADMAXIMA;
+	(heredada) TIPOGASOLINA;
+	NUMERo_DE_PUERTAS;
+	
+	(heredada) FUNCTION diHola()
+		IMPRIME "hola"
+		
+	FUNCTION SETTERNUMERO_DE_PUERTAS (INTEGER puertas) //Las clases hija tambien pueden tener sus propias propiedades y funciones
+		ESTA_CLASE.NUMERo_DE_PUERTAS = puertas
+		
+	FUNCTION GETTERNUMERO_DE_PUERTAS() INTEGER
+		DEVUELVE ESTA_CLASE.NUMERo_DE_PUERTAS
+
+CLASE COUPE HEREDA DE COCHE //Clase que hereda (de coche) de una clase que hereda (coche de vehiculo)
+	(heredada) VELOCIDADMAXIMA;
+	(heredada) TIPOGASOLINA;
+	NUMERo_DE_PUERTAS;
+	
+	(heredada) FUNCTION diHola()
+		IMPRIME "hola"
+		
+	(heredada) FUNCTION SETTERNUMERO_DE_PUERTAS (INTEGER puertas) //Las clases hija tambien pueden tener sus propias propiedades y funciones
+		ESTA_CLASE.NUMERo_DE_PUERTAS = puertas
+		
+	(heredada) FUNCTION GETTERNUMERO_DE_PUERTAS() INTEGER
+		DEVUELVE ESTA_CLASE.NUMERo_DE_PUERTAS
+
+EJEMPLO:
+public class Main {
+
+    public static void main(String[] args) {
+        CocheElectrico cocheElectrico = new CocheElectrico();
+        cocheElectrico.velocidadMaxima = 14;
+        cocheElectrico.matricula = "ABC 1234 ES";
+
+        System.out.println(cocheElectrico.compruebaMatricula("XXX"));
+    }
+}
+
+class Vehiculo {
+    int velocidadMaxima;
+    String matricula;
+
+    public boolean compruebaMatricula(String matricula) {
+        if (matricula == "XXX") {
+            return true;
+        }
+
+        return false;
+    }
+}
+
+class Coche extends Vehiculo {
+
+}
+
+class CocheElectrico extends Coche {
+
+}
+
+Hay clases a las que podemos ponerles que no puedan heredar mas de ella:
+	Se hace poniendole "final" al principio a la clase
+
+FINAL class Coche extends Vehiculo {
+
+}
+
+class CocheElectrico extends Coche { //Por lo qu CocheElectrico no podria heredar de Coche
+
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Clases abstractas  - Orden (de padres).
+Funcion amstracta - Accion (Recoger la habitacion).
+Métodos abstractos dicen QUÉ hay que hacer pero no CÓMO hay que hacerlo.
+
+Herencia - Relación que nosotros creamos entre las clases (Una clase hereda de otra).
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+TIPOS DE HERENCIAS
+
+HERENCIA JERÁRQUICA
+De esa clase derivan 2 clases y de esa nueva clase derivan otras 2... y demás.
+
+CLASE A
+  CLASE B HEREDA DE A
+    CLASE 1 HEREDA DE B
+    CLASE 2 HEREDA DE B
+    
+  CLASE C HEREDA DE A
+    CLASE PERRO HEREDA DE C
+    CLASE GATO HEREDA DE C
+    
+  CLASE D HEREDA DE A
+    CLASE COCHE HEREDA DE D
+    CLASE MOTO HEREDA DE D
+    
+HERENCIA HÍBRIDA
+Un hijo hereda de dos padres.
+
+CLASE A
+  CLASE B HEREDA DE A
+  CLASE C HEREDA DE A
+  
+CLASE D HEREDA DE B Y DE C
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+POLIMORFISMO
+Las clases hijas implementan la misma función pero hacen diferentes cosas
+
+CLASE VEHICULO
+  PRIVADA VELOCIDADMAXIMA;
+  
+  FUNCION diHola()
+    IMPRIME "hola"
+    
+CLASE COCHE HEREDA DE VEHICULO
+  (heredada) VELOCIDADMAXIMA
+  
+  (heredada PERO LA SOBREESCRIBO) FUNCION diHola()
+    IMPRIME "Soy un robot pero se contar del 1 al 10"
+    
+    FUNCION SumaNumeros(ENTERO a, ENTERO b) ENTERO
+      DEVUELVE A +B
+      
+    FUNCION SumaNumeros(FLOTANTE a, FLOTANTE b) FLOTANTE
+      DEVUELVE A + B
+      
+    FUNCION SumaNumeros(DOUBLE a, DOUBLE b) DOUBLE
+      DEVUELVE A + B
+      
+  ------------------------------------------------------------------------------------------------------------------------------------------
+  
+  INTERFACES
+  - Son parecidad a las clases abstractas pero a diferencia de las clases abstractas no implementan ninguna funcion sino que s
+  que nos dicen lo que nosotros tenemos que implementar.
+  - Una forma de expresar o indicar a un programador que cuando cree una clase tenga que implementar esos metodos definidos
+  en la interface
+  
+  INTERFACE COCHE
+    FUNCION ACELERAR(NUMERO CUANTAVELOCIDAD)
+    FUNCION FRENAR(NUMERO CUANTAVELOCIDAD)
+    
+  EJEMPLO PRACTICO:
+  
+  interface Vehiculo {
+    int variables = 0;
+    void Acelerar(int cuantaVelocidad);
+    void Frenar(int cuantaVelocidad);
+}
+
+class Coche implements Vehiculo{
+    public void Acelerar(int cuantaVelocidad) {
+
+    }
+
+    public void Frenar(int cuantaVelocidad) {
+
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Polimorfismo
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Interfaces
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
