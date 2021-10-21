@@ -1,0 +1,24 @@
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Framework:
+Conjunto de clases y algunas herramientas que nos simplifican el desarrollo dandonos ya implementada gran funcionalidad que de otra forma
+habria que hacer a mano.
+Se implementan en un lenguaje (coleccion de librearias que se implementan en un lenguaje)
+Cada Framework solo se usa en el lenguaje al que esta orientado.
+
+PHP
+"Zend Framework"
+	-> Clases (Auth, Log, etc...)
+	-> Herramienta
+
+$auth->ConnectWithFacebook();
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+FrontEnd -> Página Web (HTML, CSS, JAVASCRIPT)
+
+BackEnd -> Servidores (PHP en su mayoria, tambien en JAVA, PYTHON...)
+
+Se comunican mediante HTTP, haciendo una peticion desde el cliente al servidor en JSON.
+
+------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,84 @@
+------------------------------------------------------------------------------------------------------------------------------------------
+LENGUAJES COMPILADOS Y LENGUAJES INTERPRETADOS
+
+Lo que hacen es coger el codigo que has escrito y pasarlo a codigo maquina o codigo medio.
+Para diferenciarlos tiene que ser por el objetivo final.
+
+CODIGO FUENTE -> [AQUI TRABAJA EL COMPILADOR] -> CODIGO FINAL
+
+---------------------------------
+- FASE: ANÁLISIS LÉXICO
+VAR VARIABLE = 10;
+
+(LEE EL CODIGO FUENTE Y LO TOKENIZA)
+V -> LETRA V
+A -> LETRA A
+= -> SIMBOLO IGUAL
+1 -> NUMERO UNO
+0 -> NUMERO CERO
+; -> PUNTO Y COMA
+
+VAR -> "PALABRA RESERVADA VAR" (COMO: IF, WHILE, DO, STATIC)
+VARIABLE -> "INDENTIFICADOR"
+= -> "SIMBOLO_ASIGNACION"
+10 -> "NUMERO ENTERO"
+---------------------------------
+- FASE: ANÁLISIS SINTÁCTICO
+Indica los errores que hay dentro del codigo que no se esta ejecutando bien.
+  IF(NUMERO > 10() {...}
+  1.IF
+  2.ABRE_PARENTESIS
+  3.CONDICION
+  4.CIERRA_PARENTESIS
+  5.ABRE LLAVE
+  6.EXPRESIONES
+  7.CIERRA LLAVE
+  
+---------------------------------
+- FASE: GENERA UN CODIGO INTERMEDIO
+	ABSTRACT SYNTAX TREE (ÁRBOL SINTÁCTICO ABSTRACTO)
+	
+---------------------------------
+- FASE: OPTIMIZACIÓN DEL CÓDIGO INTERMEDIO
+  for (i = 0; i <= 4;i++){
+	System.out.println("Valor actual: " + i);
+  }
+
+  TRAS UNROLL LOOP:
+
+  System.put.println("Valor actual: 0");
+  System.put.println("Valor actual: 1");
+  System.put.println("Valor actual: 2");
+  System.put.println("Valor actual: 3");
+  
+---------------------------------
+- FASE: GENERACIÓN DE CÓDIGO
+  - CÓDIGO MÁQUINA
+  - CÓDIGO PARA SER INTERPRETADOS
+  
+---------------------------------
+
+Lenguajes compilados (se ejecuta en la memoria del procesador): *C, C++, RUST, GO*
+
+Lenguajes interpretados (se ejecuta en un intérprete (programa auxiliar llamado intérprete)): *Java, PHP, python*
+Se ejecuta a través de MV o un intérprete
+
+----------------------------------
+
+Java: "bytecode" -> JVM (Java VM) -> RESULTADO FINAL
+
+EXIT(0);
+ MOV AX, 4Ch
+ INT 21h
+ 66 B8 4C 00 CD 21 (esto en binario, no hexadecimal)
+ 
+EXIT(0);
+ CALL EXIT
+  -> EJECUTAR SALIR DE LA APLICACIÓN
+  
+C# -> MSIL(Codigo intermedio)
+	  -> Compilarlo (JIT - Just-In-Time, JIT Compiler)
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
